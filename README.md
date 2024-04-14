@@ -1,4 +1,8 @@
-# Frontend (React or your choice)
+# Ecommerce Assignment
+
+## Requirements
+
+### Frontend (React or your choice)
 
 Leverage this Store endpoint API to build an e-commerce product catalog (preferably in React).
 
@@ -21,6 +25,10 @@ The site should display a product catalog with the following features:
 
 Please use best practices of SPA, CSS, etc.
 
-# Backend (Spring Boot, Node.js your choice)
+### Backend (Spring Boot, Node.js your choice)
 
 Since there is no Brand endpoint to leverage for the filtering on the frontend, please create one. Please include how you would handle unit/integration testing, validations, and error handling for this new endpoint. You may store the source data anyway you’d like.
+
+## Author
+Aneesh Dua
+(workstuff.dua@gmail.com)
