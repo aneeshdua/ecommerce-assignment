@@ -1,0 +1,28 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.headerCtn {
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  text-align: center;
+  height: 10%;
+}
+
+.footerCtn {
+  background-color: #fff;
+  text-align: center;
+  height: 10%;
+}
+.bodyCtn {
+  top: 10%;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  text-align: center;
+}

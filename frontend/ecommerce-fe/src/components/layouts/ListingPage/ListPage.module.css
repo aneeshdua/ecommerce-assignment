@@ -1,0 +1,9 @@
+.FilterBarCtn{
+    min-width: 300px;
+}
+
+.SortMenuCtn{
+    justify-content: right;
+    display: flex;
+    margin-right: 300px;
+}

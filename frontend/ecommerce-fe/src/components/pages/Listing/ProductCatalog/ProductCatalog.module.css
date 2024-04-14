@@ -1,0 +1,21 @@
+
+.CatalogCtn{
+    justify-content: center;
+    max-width: 100%;
+}
+
+.ProductCardsCtn {
+    display: inline-flex;
+    flex-wrap: wrap;
+    max-width: fit-content;
+}
+
+.ProductCardsCtn > * {   
+    flex: 0 0 auto;
+}
+
+.PaginationCtn{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}

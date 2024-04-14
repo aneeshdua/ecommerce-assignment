@@ -1,0 +1,21 @@
+/* SearchBar.module.css */
+
+.searchBarCtn {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    margin: 20px;
+    padding: 20px;
+    left: auto;
+}
+
+.searchInput {
+    margin-right: 10px;
+    margin-left: 20%;
+    width: 50%;
+}
+
+.searchButton {
+    background-color: #2196f3;
+    color: #fff;
+}
