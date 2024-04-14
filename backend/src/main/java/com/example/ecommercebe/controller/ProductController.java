@@ -14,6 +14,11 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    @GetMapping("/")
+    public String healthCheck() {
+        return "E-commerce backend is up and running!";
+    }
+
     @GetMapping("/products")
     public List<Product> getAllProducts() {
         return productService.getAllProducts();

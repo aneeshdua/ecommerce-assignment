@@ -6,8 +6,9 @@ import styles from './CatalogFilter.module.css';
 import { getFilteredProducts } from '../../../../api/api';
 import { CatalogContext } from '../../../layouts/ListingPage/ListPage';
 
-const CatalogFilter = ({ filterTypes,filterList }) => {
-    const [filterObj, setFilterObj] = React.useState({});//[type: [filter1, filter2, ...]
+const CatalogFilter = ({ filterTypes,filterList,searchText, filterObj,setFilterObj }) => {
+    // const [filterObj, setFilterObj] = React.useState({});//[type: [filter1, filter2, ...]
+    
     const {setCatalogData, pageDataUpdateHandler} = useContext(CatalogContext);
     const filterBoxHandler = (event,type) => {
         let temp = filterObj;
@@ -23,7 +24,7 @@ const CatalogFilter = ({ filterTypes,filterList }) => {
         setFilterObj(temp);
         if (Object.keys(temp).length !== 0) {
             let body = {};
-            body['search'] = ""
+            body['searchQuery'] = searchText;
             body['brands'] = temp['brands'] ? temp['brands'] : [];
             body['categories'] = temp['categories'] ? temp['categories'] : [];
             getFilteredProducts(body).then((data) => {

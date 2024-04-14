@@ -5,12 +5,13 @@ import { useContext } from 'react';
 import { CatalogContext } from '../../../layouts/ListingPage/ListPage';
 import { searchProducts } from '../../../../api/api';
 
-const SearchBar = () => {
-    const [searchText, setSearchText] = useState('');
+const SearchBar = ({searchText,setSearchText,setFilterObj}) => {
+    // const [searchText, setSearchText] = useState('');
     const {setCatalogData, pageDataUpdateHandler} = useContext(CatalogContext);
     
     const handleSearch = () => {
         // Perform search logic here
+        setFilterObj({}); // Reset filters
         console.log('Searching for:', searchText);
         searchProducts(searchText).then((data) => {
             // Update the context with the search results

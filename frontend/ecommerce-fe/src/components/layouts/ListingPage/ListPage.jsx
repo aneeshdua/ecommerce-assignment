@@ -20,7 +20,8 @@ const ListPage = () => {
     const [catalogPage, setCatalogPage] = React.useState([]);
     const [totalPages, setTotalPages] = React.useState(0);
     const [filterList, setFilterList] = React.useState({});
-    
+    const [searchText, setSearchText] = React.useState('');
+    const [filterObj, setFilterObj] = React.useState({});
     useEffect(() => {
         fetchFullCatalog().then((data) => {
             setCatalogData(data);
@@ -55,10 +56,16 @@ const ListPage = () => {
                 pageDataUpdateHandler: pageDataUpdateHandler,
             }}
             >
-                <SearchBar/>
+                <SearchBar searchText={searchText} setSearchText={setSearchText} setFilterObj={setFilterObj}/>
                 <Grid container>
                     <Grid item xs={2} md={2} className={styles.FilterBarCtn}>
-                        <CatalogFilter filterTypes={filterTypes} filterList={filterList}/>
+                        <CatalogFilter
+                            filterTypes={filterTypes}
+                            filterList={filterList}
+                            searchText={searchText}
+                            filterObj={filterObj}
+                            setFilterObj={setFilterObj}
+                        />
                     </Grid> 
                     
                     <Grid item xs={10} md={10}>

@@ -5,6 +5,6 @@ export const filterTypes = [
 
 export const sortOptions = {
     title: 'Product Title',
-    price_low_to_high: 'Price (Low To High)',
-    price_high_to_low: 'Price (High To Low)',
+    price_asc: 'Price (Low To High)',
+    price_desc: 'Price (High To Low)',
 }

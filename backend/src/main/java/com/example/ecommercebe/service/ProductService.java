@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.ecommercebe.repository.ProductRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,13 +29,6 @@ public class ProductService {
         return productRepository.getAllCategories();
     }
 
-    public List<Product> getProductByCategory(String category) {
-        return productRepository.findByCategory(category);
-    }
-    public List<Product> getProductByBrand(String brand) {
-        return productRepository.findByBrand(brand);
-    }
-
     public List<Product> getFilteredProducts(FilterRequest filterRequest) {
         if (filterRequest == null) {
             return productRepository.findAll();
@@ -45,6 +37,7 @@ public class ProductService {
         if (filterRequest.searchQuery != null && !filterRequest.searchQuery.isEmpty()) {
             products = search.searchProducts(filterRequest.searchQuery);
         }
+
         if (filterRequest.getCategories() != null && !filterRequest.getCategories().isEmpty()){
             products = products.stream().filter(product -> filterRequest.getCategories().contains(product.getCategory())).collect(Collectors.toList());
         }
