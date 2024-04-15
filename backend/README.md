@@ -41,9 +41,25 @@
 ### Local Development
 There are several ways to run a Spring Boot application on your local machine. One way is to execute the main method in the `com.example.ecommercebe.EcommerceBeApplication` class from your IDE.
 
+### Tests
+- The project contains unit tests for the service and the controller. You can run the tests using the following command:
+  `./gradle test`
+- The project also contains a sample integration test. You can run the integration test using the following command:
+  `./gradle integrationTest`
+
+You can view the test results and code coverage in the following images:
+
+![All Tests](allTests.png "All Tests")
+
+![Code Coverage](codeCoverage.png "codeCoverage")
+
 
 ### Deployment
 You can use the Dockerfile present in the project directory to create an image that can be run a VM/container.
 Run the following command in the project directory to build the image:
 
 `docker build -t "ecommerce-be" .`
+
+Run the following command to run the image:
+
+`docker run -p 8080:8080 ecommerce-be`
