@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TextField, Button } from '@mui/material';
 import styles from './SearchBar.module.css';
 import { useContext } from 'react';
@@ -6,8 +6,7 @@ import { CatalogContext } from '../../../layouts/ListingPage/ListPage';
 import { searchProducts } from '../../../../api/api';
 
 const SearchBar = ({searchText,setSearchText}) => {
-    // const [searchText, setSearchText] = useState('');
-    const {setCatalogData, pageDataUpdateHandler,filterObj,setFilterObj} = useContext(CatalogContext);
+    const {setCatalogData, pageDataUpdateHandler,setFilterObj} = useContext(CatalogContext);
     
     const handleSearch = () => {
         // Perform search logic here

@@ -1,5 +1,5 @@
 import { Container, Pagination, Stack } from '@mui/material';
-import React, { useContext } from 'react';
+import React from 'react';
 import styles from './ProductCatalog.module.css';
 import { ProductCard } from '../ProductCard/ProductCard';
 

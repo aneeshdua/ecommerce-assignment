@@ -16,6 +16,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Provide a detailed product page after clicking on a product.
 - Provide a main product image along with all the product detail information provided by the product endpoint.
 
+### Sample Unit Test location
+
+[ProductCard unit Test](./src/components/pages/Listing/ProductCard/ProductCard.test.jsx)
+
 ## Development Scripts
 
 In the project directory, you can run:

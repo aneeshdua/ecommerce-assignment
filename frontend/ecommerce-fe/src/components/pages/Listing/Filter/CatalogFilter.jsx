@@ -78,7 +78,7 @@ const CatalogFilter = ({ filterTypes,filterList,searchText,  }) => {
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }} className={styles.FilterBarCtn}>
             <Typography variant="h6">Filters</Typography>
             {filterList && Object.keys(filterList) && getFilterComponents()}
         </div>

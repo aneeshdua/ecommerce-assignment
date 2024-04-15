@@ -22,6 +22,7 @@ const ListPage = () => {
     const [filterList, setFilterList] = React.useState({});
     const [searchText, setSearchText] = React.useState('');
     const [filterObj, setFilterObj] = React.useState({});
+    
     useEffect(() => {
         fetchFullCatalog().then((data) => {
             setCatalogData(data);
