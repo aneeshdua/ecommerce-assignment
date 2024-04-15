@@ -6,7 +6,7 @@ import CatalogFilter from '../../pages/Listing/Filter/CatalogFilter';
 import SearchBar from '../../pages/Listing/SearchBar/SearchBar';
 import { fetchFullCatalog, getFilterValues } from '../../../api/api';
 
-import { filterTypes } from '../../../constants/constants';
+import { DEFAULT_SORT, filterTypes, sortOptions } from '../../../constants/constants';
 import ProductCatalog from '../../pages/Listing/ProductCatalog/ProductCatalog';
 import SortMenu from '../../pages/Listing/SortMenu/SortMenu';
 
@@ -16,13 +16,19 @@ export const CatalogContext = createContext({
 });
 
 const ListPage = () => {
+    //storing catalogData and catalogPage data separately for client side pagination and sorting
+    
     const [catalogData, setCatalogData] = React.useState([]);
     const [catalogPage, setCatalogPage] = React.useState([]);
     const [totalPages, setTotalPages] = React.useState(0);
+
     const [filterList, setFilterList] = React.useState({});
+    
     const [searchText, setSearchText] = React.useState('');
     const [filterObj, setFilterObj] = React.useState({});
     
+    const [sortType, setSortType] = React.useState(DEFAULT_SORT);
+
     useEffect(() => {
         fetchFullCatalog().then((data) => {
             setCatalogData(data);
@@ -59,19 +65,25 @@ const ListPage = () => {
                 setFilterObj: setFilterObj
             }}
             >
-                <SearchBar searchText={searchText} setSearchText={setSearchText} setFilterObj={setFilterObj}/>
+                <SearchBar
+                    searchText={searchText}
+                    setSearchText={setSearchText}
+                    setFilterObj={setFilterObj}
+                    setSortOption={setSortType}
+                />
                 <Grid container>
                     <Grid item xs={2} md={2} className={styles.FilterBarCtn}>
                         <CatalogFilter
                             filterTypes={filterTypes}
                             filterList={filterList}
-                            searchText={searchText} 
+                            searchText={searchText}
+                            setSortOption={setSortType} 
                         />
                     </Grid> 
                     
                     <Grid item xs={10} md={10}>
                         <div className={styles.SortMenuCtn}>
-                            <SortMenu/>
+                            <SortMenu sortOption={sortType} setSortOption={setSortType}/>
                         </div>
                         <ProductCatalog
                             catalogPage={catalogPage}

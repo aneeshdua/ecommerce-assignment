@@ -12,3 +12,5 @@ export const sortOptions = {
     price_asc: 'Price (Low To High)',
     price_desc: 'Price (High To Low)',
 }
+
+export const DEFAULT_SORT = 'title';

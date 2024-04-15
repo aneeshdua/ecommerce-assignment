@@ -5,8 +5,9 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import styles from './CatalogFilter.module.css';
 import { getFilteredProducts } from '../../../../api/api';
 import { CatalogContext } from '../../../layouts/ListingPage/ListPage';
+import { DEFAULT_SORT } from '../../../../constants/constants';
 
-const CatalogFilter = ({ filterTypes,filterList,searchText,  }) => {
+const CatalogFilter = ({ filterTypes,filterList,searchText, setSortOption  }) => {
     // const [filterObj, setFilterObj] = React.useState({});//[type: [filter1, filter2, ...]
     
     const {setCatalogData, pageDataUpdateHandler,filterObj,setFilterObj} = useContext(CatalogContext);
@@ -22,6 +23,7 @@ const CatalogFilter = ({ filterTypes,filterList,searchText,  }) => {
             temp[type] = temp[type].filter((filter) => filter !== event.target.value);
         }
         setFilterObj(temp);
+        setSortOption(DEFAULT_SORT);
         if (Object.keys(temp).length !== 0) {
             let body = {};
             body['searchQuery'] = searchText;
