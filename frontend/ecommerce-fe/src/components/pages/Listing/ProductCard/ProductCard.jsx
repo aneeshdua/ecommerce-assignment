@@ -4,7 +4,7 @@ import styles from './ProductCard.module.css';
 import { ProductRating } from '../../../common/ProductRating/ProductRating';
 
 
-export const ProductCard = ({ id,imageUrl,title, description, price, rating }) => {
+export const ProductCard = ({ id,imageUrl,title, description, price, rating,category }) => {
 	return (
 		<Card className={styles.ProductCardCtn} >
 			<CardActionArea href={`/${id}`} >
@@ -23,6 +23,9 @@ export const ProductCard = ({ id,imageUrl,title, description, price, rating }) =
 					/>
 					<Typography variant="body2" color="text.secondary">
 						{"$"+price}
+					</Typography>
+					<Typography variant="body2" color="text.secondary">
+						{category}
 					</Typography>
 					<Typography variant="body2" color="text.secondary">
 						{description}

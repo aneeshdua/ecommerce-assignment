@@ -23,6 +23,7 @@ const ProductCatalog = ({ catalogPage,totalPages,paginationHandler }) => {
                     title={product.title}
                     price={product.price}
                     rating={product.rating}
+                    category={product.category}
                 />
             );
         }

@@ -45,10 +45,16 @@ const ProductPage = () => {
                                 rating={product.rating}
                             />
                             <Typography variant="h4" className={styles.ProductPriceTxt}>
-                                {"$"+product.price}
+                                {"$"+product.price+"("+product.discountPercentage+"% off)"}
+                            </Typography>
+                            <Typography variant="h5" >
+                                {product.category+" | "+product.brand}
                             </Typography>
                             <Typography variant="body2" >
-                                {product.description}
+                                {"Product Description:  "+product.description}
+                            </Typography>
+                            <Typography variant="body2" >
+                                {product.stock+" units left in stock"}
                             </Typography>
                             
                         </Container>

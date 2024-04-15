@@ -12,7 +12,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Add the following filters *(selecting a filter resets sortOption to default)*:
     - Category
     - Brand
-- Add a search bar to search for Product. Leverage the search endpoint or enhance with your own logic. *(searching resets sortOption to default)*
+- Add a search bar to search for Product. Leverages the search [endpoint](https://dummyjson.com/products/search?q=Laptop). *(searching resets sortOption to default)*
 - Provide a detailed product page after clicking on a product.
 - Provide a main product image along with all the product detail information provided by the product endpoint.
 
