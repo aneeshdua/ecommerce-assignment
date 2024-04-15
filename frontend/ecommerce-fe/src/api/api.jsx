@@ -1,6 +1,8 @@
+import { CUSTOM_API_URL, DUMMY_JSON_API_URL } from "../constants/constants";
+
 export async function fetchFullCatalog() {
     try {
-        const response = await fetch('https://dummyjson.com/products');
+        const response = await fetch(`${DUMMY_JSON_API_URL}/products`);
         const data = await response.json();
         return data['products'];
     } catch (error) {
@@ -11,7 +13,7 @@ export async function fetchFullCatalog() {
 
 export async function fetchProduct(id){
     try {
-        const response = await fetch(`https://dummyjson.com/products/${id}`);
+        const response = await fetch(`${DUMMY_JSON_API_URL}/products/${id}`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -21,7 +23,7 @@ export async function fetchProduct(id){
 
 export async function searchProducts(query){
     try {
-        const response = await fetch(`https://dummyjson.com/products/search?q=${query}`);
+        const response = await fetch(`${DUMMY_JSON_API_URL}/products/search?q=${query}`);
         const data = await response.json();
         return data['products'];
     } catch (error) {
@@ -31,7 +33,7 @@ export async function searchProducts(query){
 
 export async function getFilterValues(type){
     try {
-        const response = await fetch(`http://localhost:8080/${type}`);
+        const response = await fetch(`${CUSTOM_API_URL}/${type}`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -42,7 +44,7 @@ export async function getFilterValues(type){
 
 export async function getFilteredProducts(body){
     try {
-        const response = await fetch(`http://localhost:8080/products/filter`, {
+        const response = await fetch(`${CUSTOM_API_URL}/products/filter`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

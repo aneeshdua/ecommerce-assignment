@@ -36,17 +36,18 @@ const ProductPage = () => {
                         
                     </Grid>
                     <Grid item xs={10} md={5}>
-                        <Container className={styles.ProductCardTextCtn}>
-                            <Typography gutterBottom variant="h5" component="div">
+                        <Container className={styles.ProductInfoCtn}>
+                            <Typography gutterBottom variant="h3" component="div">
                                 {product.title}
                             </Typography>
                             <ProductRating
+                                className={styles.ProductRatingCtn}
                                 rating={product.rating}
                             />
-                            <Typography variant="body2" color="text.secondary">
-                                {"Rs. "+product.price}
+                            <Typography variant="h4" className={styles.ProductPriceTxt}>
+                                {"$"+product.price}
                             </Typography>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" >
                                 {product.description}
                             </Typography>
                             

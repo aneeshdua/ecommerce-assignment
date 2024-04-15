@@ -1,3 +1,7 @@
+export const DUMMY_JSON_API_URL = 'https://dummyjson.com';
+
+export const CUSTOM_API_URL = 'http://localhost:8080';
+
 export const filterTypes = [
     'categories',
     'brands',

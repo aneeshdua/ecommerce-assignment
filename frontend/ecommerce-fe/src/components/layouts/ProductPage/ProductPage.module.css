@@ -3,14 +3,6 @@
     min-height: 100%;
 }
 
-/* .ImageGalleryCtn{
-    display: inline-flex;
-    width: 100%;
-    height: 100%;
-    margin: 10px;
-} */
-
-
 .swiper {
     width: 100%;
     height: 100%;
@@ -34,3 +26,20 @@
     object-fit: cover;
 }
   
+.ProductInfoCtn{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    margin-left: 5%;
+}
+
+.ProductPriceTxt{
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.ProductRatingCtn{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}

@@ -1,7 +1,7 @@
 import { Container, Pagination, Stack } from '@mui/material';
 import React, { useContext } from 'react';
 import styles from './ProductCatalog.module.css';
-import { ProductCard } from '../../../common/ProductCard/ProductCard';
+import { ProductCard } from '../ProductCard/ProductCard';
 
 
 const ProductCatalog = ({ catalogPage,totalPages,paginationHandler }) => {

@@ -1,7 +1,9 @@
 import React from 'react';
-import { Card, CardActionArea, CardContent, CardMedia, Rating, Typography } from '@mui/material';
+import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 import styles from './ProductCard.module.css';
-import { ProductRating } from '../ProductRating/ProductRating';
+import { ProductRating } from '../../../common/ProductRating/ProductRating';
+
+
 export const ProductCard = ({ id,imageUrl,title, description, price, rating }) => {
 	return (
 		<Card className={styles.ProductCardCtn} >
@@ -20,7 +22,7 @@ export const ProductCard = ({ id,imageUrl,title, description, price, rating }) =
 						rating={rating}
 					/>
 					<Typography variant="body2" color="text.secondary">
-						{"Rs. "+price}
+						{"$"+price}
 					</Typography>
 					<Typography variant="body2" color="text.secondary">
 						{description}

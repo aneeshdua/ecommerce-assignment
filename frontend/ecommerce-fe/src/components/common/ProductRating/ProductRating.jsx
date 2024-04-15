@@ -2,9 +2,9 @@ import React from 'react';
 import { Rating, Typography } from '@mui/material';
 import styles from './ProductRating.module.css';
 
-export const ProductRating = ({ rating }) => {
+export const ProductRating = ({ rating, className }) => {
 	return (
-		<div className={styles.ProductRatingCtn}>
+		<div className={`${styles.ProductRatingCtn} ${className}`}>
 			<Rating
 				name="product-rating"
 				value={rating}

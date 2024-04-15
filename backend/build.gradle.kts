@@ -24,8 +24,24 @@ dependencies {
 	implementation("org.springframework:spring-web:6.1.6")
 	runtimeOnly("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
 }
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+sourceSets {
+	create("integrationTest") {
+		compileClasspath += sourceSets["main"].output + sourceSets["test"].output
+		runtimeClasspath += sourceSets["main"].output + sourceSets["test"].output
+	}
+}
+
+tasks {
+	val integrationTest by registering(Test::class) {
+		testClassesDirs = sourceSets["integrationTest"].output.classesDirs
+		classpath = sourceSets["integrationTest"].runtimeClasspath
+		shouldRunAfter(test)
+	}
 }
