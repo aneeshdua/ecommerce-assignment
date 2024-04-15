@@ -5,9 +5,9 @@ import { useContext } from 'react';
 import { CatalogContext } from '../../../layouts/ListingPage/ListPage';
 import { searchProducts } from '../../../../api/api';
 
-const SearchBar = ({searchText,setSearchText,setFilterObj}) => {
+const SearchBar = ({searchText,setSearchText}) => {
     // const [searchText, setSearchText] = useState('');
-    const {setCatalogData, pageDataUpdateHandler} = useContext(CatalogContext);
+    const {setCatalogData, pageDataUpdateHandler,filterObj,setFilterObj} = useContext(CatalogContext);
     
     const handleSearch = () => {
         // Perform search logic here

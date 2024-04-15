@@ -6,10 +6,10 @@ import styles from './CatalogFilter.module.css';
 import { getFilteredProducts } from '../../../../api/api';
 import { CatalogContext } from '../../../layouts/ListingPage/ListPage';
 
-const CatalogFilter = ({ filterTypes,filterList,searchText, filterObj,setFilterObj }) => {
+const CatalogFilter = ({ filterTypes,filterList,searchText,  }) => {
     // const [filterObj, setFilterObj] = React.useState({});//[type: [filter1, filter2, ...]
     
-    const {setCatalogData, pageDataUpdateHandler} = useContext(CatalogContext);
+    const {setCatalogData, pageDataUpdateHandler,filterObj,setFilterObj} = useContext(CatalogContext);
     const filterBoxHandler = (event,type) => {
         let temp = filterObj;
         if (event.target.checked) {
@@ -33,6 +33,10 @@ const CatalogFilter = ({ filterTypes,filterList,searchText, filterObj,setFilterO
             });
         }
     };
+
+    const isCheckedHandler = (type,filter) => {
+        return filterObj && filterObj[type] && filterObj[type].includes(filter) ? true : false;
+    };
     const getFilterComponents = () => {
         return (
             <>
@@ -50,7 +54,17 @@ const CatalogFilter = ({ filterTypes,filterList,searchText, filterObj,setFilterO
                                 <FormGroup>
                                     {filterList[type] && filterList[type].map((filter) => {
                                         return (
-                                            <FormControlLabel key={filter} control={<Checkbox onChange={(event) => filterBoxHandler(event, type)} value={filter} />} label={filter} />
+                                            <FormControlLabel 
+                                                key={filter}
+                                                control={
+                                                    <Checkbox 
+                                                        onChange={(event) => filterBoxHandler(event, type)}
+                                                        value={filter}
+                                                        checked={isCheckedHandler(type,filter)}
+                                                    />
+                                                }
+                                                label={filter}
+                                            />
                                         );
                                     })}
                                 </FormGroup>

@@ -54,6 +54,8 @@ const ListPage = () => {
                 catalogData:catalogData,
                 setCatalogData: setCatalogData,
                 pageDataUpdateHandler: pageDataUpdateHandler,
+                filterObj: filterObj,
+                setFilterObj: setFilterObj
             }}
             >
                 <SearchBar searchText={searchText} setSearchText={setSearchText} setFilterObj={setFilterObj}/>
@@ -62,9 +64,7 @@ const ListPage = () => {
                         <CatalogFilter
                             filterTypes={filterTypes}
                             filterList={filterList}
-                            searchText={searchText}
-                            filterObj={filterObj}
-                            setFilterObj={setFilterObj}
+                            searchText={searchText} 
                         />
                     </Grid> 
                     
